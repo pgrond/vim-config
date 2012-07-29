@@ -32,7 +32,7 @@ colorscheme xoria256
 " set correct path here to load tags for a given project.
 
 " set path to your tags file here
-" set tags+=~/.vim/tags/mytags.tags
+" set tags+=~/.vim/tags/drupal-7.8.tags
 
 "Always edit in utf-8.
 set encoding=utf-8
@@ -173,6 +173,6 @@ nmap <silent><F8> :NERDTreeTabsToggle<CR>
 imap <silent><F8> :NERDTreeTabsToggle<CR>
 
 " open navigation tree at the emplacement of current buffer
-nmap <silent><F10> :NERDTreeFind<CR>
+nmap <silent>;n :NERDTreeFind<CR>
 
 
