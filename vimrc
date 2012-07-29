@@ -175,4 +175,4 @@ imap <silent><F8> :NERDTreeTabsToggle<CR>
 " open navigation tree at the emplacement of current buffer
 nmap <silent>;n :NERDTreeFind<CR>
 
-
+nnoremap <F5> :GundoToggle<CR>
