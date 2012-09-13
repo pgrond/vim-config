@@ -6,6 +6,8 @@
 "inside a 'bundle' directory. It's the only way suppress / add
 "plugin in a clean way.
 call pathogen#infect() 
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
@@ -20,8 +22,9 @@ syntax on
 "Our default colorscheme use 256 colors
 set t_Co=256
 
-"Default colorsheme
-colorscheme xoria256
+"Default colors
+" colorscheme xoria256
+colorscheme wombat
 
 "===============================
 " DRUPAL SETTINGS
@@ -116,6 +119,9 @@ set scrolloff=5
 " print how many characters contains a line in status line
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %{strlen(getline('.'))}\ characters\ %P
 
+set wrap
+set linebreak
+
 "================================
 " CONFIG PLUGIN TAGLIST SETTINGS
 "================================
@@ -175,4 +181,36 @@ imap <silent><F8> :NERDTreeTabsToggle<CR>
 " open navigation tree at the emplacement of current buffer
 nmap <silent>;n :NERDTreeFind<CR>
 
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F10> :GundoToggle<CR>
+
+" Window movement
+map <A-h> <C-w>h
+map <A-j> <C-w>j
+map <A-k> <C-w>k
+map <A-l> <C-w>l
+
+
+" Toggle spell checking on and off with `;s`
+nmap <silent> <leader>s :set spell!<CR>
+" Set region to American English
+set spelllang=en_us
+
+"================================
+" CUSTOM FUNCTIONS 
+"================================
+function! <SID>StripTrailingWhitespaces()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
