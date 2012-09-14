@@ -98,7 +98,7 @@ set scrolljump=5 " lines to scroll when cursor leaves screen
 set foldenable " auto fold code
 set gdefault " the /g flag on :s substitutions by default
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+"set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 " no swap file (temporary files for content recovery)
 set noswapfile
