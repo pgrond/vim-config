@@ -5,7 +5,7 @@
 "Use of pathogen plugin to keep each plugin in its own folder.
 "inside a 'bundle' directory. It's the only way suppress / add
 "plugin in a clean way.
-call pathogen#infect() 
+call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -24,18 +24,20 @@ syntax on
 
 "automaticcaly enable mouse
 set mouse=a
-   
+
 scriptencoding utf-8
+"Always edit in utf-8.
+set encoding=utf-8
 
 set backup " backups are nice ...
-set undofile	" so is persistent undo ...
+set undofile " so is persistent undo ...
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 "make vim save view (state) (folds, cursor, etc)
 au BufWinLeave * silent! mkview "make vim save view (state) (folds, cursor, etc)
 "make vim load view (state) (folds, cursor, etc)
-au BufWinEnter * silent! loadview 
+au BufWinEnter * silent! loadview
 
 "==============================
 "Vim UI
@@ -46,8 +48,7 @@ set t_Co=256
 
 "Default colors
 "colorscheme xoria256
-"colorscheme wombat
-color solarized
+colorscheme molokai
 
 "display the current mode
 set showmode
@@ -67,7 +68,7 @@ endif
 if has('statusline')
   set laststatus=2
 
-  " Broken down into easily includeable segments
+  "Broken down into easily includeable segments
   set statusline=%<%f\ " Filename
   set statusline+=%w%h%m%r " Options
   set statusline+=%{fugitive#statusline()} " Git Hotness
@@ -77,25 +78,25 @@ if has('statusline')
   set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 endif
 
-set backspace=indent,eol,start	" backspace for dummys
-set linespace=0	" No extra spaces between rows
-set nu	" Line numbers on
-set showmatch	" show matching brackets/parenthesis
-set incsearch	" find as you type search
-set hlsearch	" highlight search terms
+set backspace=indent,eol,start " backspace for dummys
+set linespace=0 " No extra spaces between rows
+set nu " Line numbers on
+set showmatch " show matching brackets/parenthesis
+set incsearch " find as you type search
+set hlsearch " highlight search terms
 " wrap search
 set wrapscan
 " but if our search is uppercase, search first for uppercase
 set smartcase
-set winminheight=0	" windows can be 0 line high
-set ignorecase	" case insensitive search
-set smartcase	" case sensitive when uc present
-set wildmenu	" show list instead of just completing
+set winminheight=0 " windows can be 0 line high
+set ignorecase " case insensitive search
+set smartcase " case sensitive when uc present
+set wildmenu " show list instead of just completing
 set wildmode=list:longest,full " command <Tab> completion, list matches, then longest common part, then all.
 set whichwrap=b,s,h,l,<,>,[,] " backspace and cursor keys wrap to
 set scrolljump=5 " lines to scroll when cursor leaves screen
 set foldenable " auto fold code
-set gdefault	" the /g flag on :s substitutions by default
+set gdefault " the /g flag on :s substitutions by default
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
@@ -109,8 +110,18 @@ set scrolloff=5
 " print how many characters contains a line in status line
 set statusline+=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %{strlen(getline('.'))}\ characters\ %P
 
+"==============================
+"FORMATTING
+"==============================
 set wrap
 set linebreak
+"set the spaces instead of regular tab
+set expandtab
+"use smart autoindenting. Used when line ends with {
+set smartindent
+"use the same indent from current line when starting a new line
+set autoindent
+
 "===============================
 " DRUPAL SETTINGS
 "===============================
@@ -125,21 +136,8 @@ set linebreak
 :set tags=./tags
 :let g:easytags_dynamic_files = 2
 
-
-"Always edit in utf-8.
-set encoding=utf-8
-
-"set the spaces instead of regular tab
-set expandtab
-
 "sets tab and shiftwidth to 2 spaces according to drupals coding standard
 set tabstop=2 shiftwidth=2 softtabstop=2
-
-"use the same indent from current line when starting a new line
-set autoindent
-
-"use smart autoindenting. Used when line ends with {
-set smartindent
 
 " ensure that drupal extensions are read as php files.
 " note that snipMate use filetype to load snippets
@@ -171,13 +169,6 @@ set syntax=php.doxygen
 " go to line with syntax error, press enter to go to next error
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
-
-
-"================================
-" feel more cumfortable
-"================================
-
-
 
 
 "================================
@@ -216,8 +207,11 @@ let g:debuggerMaxDepth = 10
 
 " \ is definitly too difficult to reach !
 " choose a more accessible 'leader' and 'localleader'
-let mapleader = ";"
-let maplocalleader=";"
+let mapleader = ","
+let maplocalleader=","
+
+" Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
+nnoremap ; :
 
 " jump to tag definition (for example a function) when press F2
 " you need ctags to make this works through a whole project
@@ -235,6 +229,13 @@ nnoremap <silent> <F9> :TlistToggle<CR>
 " NerdTree behave more like in a classic IDE
 nmap <silent><F8> :NERDTreeTabsToggle<CR>
 imap <silent><F8> :NERDTreeTabsToggle<CR>
+map <leader>e :NERDTreeFind<CR>
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
 
 " open navigation tree at the emplacement of current buffer
 nmap <silent>;n :NERDTreeFind<CR>
@@ -242,10 +243,10 @@ nmap <silent>;n :NERDTreeFind<CR>
 nnoremap <F10> :GundoToggle<CR>
 
 " Window movement
-map <A-h> <C-w>h
-map <A-j> <C-w>j
-map <A-k> <C-w>k
-map <A-l> <C-w>l
+map <A-h> <C-w>h<C-W>_
+map <A-j> <C-w>j<C-W>_
+map <A-k> <C-w>k<C-W>_
+map <A-l> <C-w>l<C-W>_
 
 
 " Toggle spell checking on and off with `;s`
@@ -266,6 +267,47 @@ function! <SID>StripTrailingWhitespaces()
   " Clean up: restore previous search history, and cursor position
   let @/=_s
   call cursor(l, c)
+endfunction
+
+
+function! InitializeDirectories()
+  let separator = "."
+  let parent = $HOME
+  let prefix = '.vim'
+  let dir_list = {
+        \ 'backup': 'backupdir',
+        \ 'views': 'viewdir',
+        \ 'swap': 'directory',
+        \ 'undo': 'undodir' }
+
+  for [dirname, settingname] in items(dir_list)
+    let directory = parent . '/' . prefix . dirname . "/"
+    if exists("*mkdir")
+      if !isdirectory(directory)
+        call mkdir(directory)
+      endif
+    endif
+    if !isdirectory(directory)
+      echo "Warning: Unable to create backup directory: " . directory
+      echo "Try: mkdir -p " . directory
+    else
+      let directory = substitute(directory, " ", "\\\\ ", "")
+      exec "set " . settingname . "=" . directory
+    endif
+  endfor
+endfunction
+call InitializeDirectories()
+
+function! NERDTreeInitAsNeeded()
+  redir => bufoutput
+  buffers!
+  redir END
+  let idx = stridx(bufoutput, "NERD_tree")
+  if idx > -1
+    NERDTreeMirror
+    NERDTreeFind
+    wincmd l
+  endif
 endfunction
 
 " Source the vimrc file after saving it
