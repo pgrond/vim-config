@@ -10,3 +10,9 @@
 [submodule "bundle/easytags"]
 	path = bundle/easytags
 	url = https://github.com/xolox/vim-easytags.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab

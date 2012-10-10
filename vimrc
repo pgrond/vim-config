@@ -97,8 +97,9 @@ set whichwrap=b,s,h,l,<,>,[,] " backspace and cursor keys wrap to
 set scrolljump=5 " lines to scroll when cursor leaves screen
 set foldenable " auto fold code
 set gdefault " the /g flag on :s substitutions by default
-set list
-"set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+" set list
+" set listchars=tab:>.,trail:.,extends:#,nbsp:. 
+" Highlight problematic whitespace
 
 " no swap file (temporary files for content recovery)
 set noswapfile
@@ -133,8 +134,9 @@ set autoindent
 " set path to your tags file here
 " set tags+=~/.vim/tags/drupal-7.8.tags
 
-:set tags=./tags
-:let g:easytags_dynamic_files = 2
+set tags=./tags;/
+let g:easytags_dynamic_files = 2
+let g:easytags_file = ./tags;/
 
 "sets tab and shiftwidth to 2 spaces according to drupals coding standard
 set tabstop=2 shiftwidth=2 softtabstop=2
@@ -188,7 +190,7 @@ let Tlist_Show_One_File=1
 let Tlist_WinWidth=50
 
 " only print constants, class and functions in our taglist
-let tlist_php_settings = 'php;d:Constantes;c:Classes;f:Fonctions'
+let tlist_php_settings = 'php;d:Constantes;c:Classes;f:Functions'
 
 "================================
 " CONFIG PLUGIN XDEBUG
