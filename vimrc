@@ -134,10 +134,9 @@ set autoindent
 " set path to your tags file here
 " set tags+=~/.vim/tags/drupal-7.8.tags
 
-set tags=./tags;/
+set tags+=./tags
 let g:easytags_dynamic_files = 2
-let g:easytags_file = ./tags;/
-
+let g:easytags_on_cursorhold = 0
 "sets tab and shiftwidth to 2 spaces according to drupals coding standard
 set tabstop=2 shiftwidth=2 softtabstop=2
 
@@ -271,34 +270,6 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
-
-function! InitializeDirectories()
-  let separator = "."
-  let parent = $HOME
-  let prefix = '.vim'
-  let dir_list = {
-        \ 'backup': 'backupdir',
-        \ 'views': 'viewdir',
-        \ 'swap': 'directory',
-        \ 'undo': 'undodir' }
-
-  for [dirname, settingname] in items(dir_list)
-    let directory = parent . '/' . prefix . dirname . "/"
-    if exists("*mkdir")
-      if !isdirectory(directory)
-        call mkdir(directory)
-      endif
-    endif
-    if !isdirectory(directory)
-      echo "Warning: Unable to create backup directory: " . directory
-      echo "Try: mkdir -p " . directory
-    else
-      let directory = substitute(directory, " ", "\\\\ ", "")
-      exec "set " . settingname . "=" . directory
-    endif
-  endfor
-endfunction
-call InitializeDirectories()
 
 function! NERDTreeInitAsNeeded()
   redir => bufoutput
