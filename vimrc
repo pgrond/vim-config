@@ -193,6 +193,11 @@ let Tlist_WinWidth=50
 let tlist_php_settings = 'php;d:Constantes;c:Classes;f:Functions'
 
 "================================
+" CONFIGURE NEOCOMPLCACHE
+"================================
+let g:neocomplcache_enable_at_startup = 1
+
+"================================
 " CONFIG PLUGIN XDEBUG
 "================================
 
