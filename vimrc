@@ -29,7 +29,7 @@ scriptencoding utf-8
 "Always edit in utf-8.
 set encoding=utf-8
 
-set nobackup 
+set backup 
 set noswapfile
 set undofile " so is persistent undo ...
 set undolevels=1000 "maximum number of changes that can be undone
