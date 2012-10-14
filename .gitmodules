@@ -22,3 +22,9 @@
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache
+[submodule "bundle/searchfold"]
+	path = bundle/searchfold
+	url = https://github.com/vim-scripts/searchfold.vim
+[submodule "bundle/scmdiff"]
+	path = bundle/scmdiff
+	url = https://github.com/ghewgill/vim-scmdiff
