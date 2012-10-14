@@ -29,10 +29,12 @@ scriptencoding utf-8
 "Always edit in utf-8.
 set encoding=utf-8
 
-set backup " backups are nice ...
+set nobackup 
+set noswapfile
 set undofile " so is persistent undo ...
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+set title
 
 "make vim save view (state) (folds, cursor, etc)
 au BufWinLeave * silent! mkview "make vim save view (state) (folds, cursor, etc)
@@ -48,7 +50,8 @@ set t_Co=256
 
 "Default colors
 "colorscheme xoria256
-colorscheme molokai
+"colorscheme molokai
+colorscheme mustang 
 
 "display the current mode
 set showmode
@@ -101,8 +104,6 @@ set gdefault " the /g flag on :s substitutions by default
 " set listchars=tab:>.,trail:.,extends:#,nbsp:. 
 " Highlight problematic whitespace
 
-" no swap file (temporary files for content recovery)
-set noswapfile
 
 " always keep at least 5 lines visible under the cursor when scrolling
 set scrolloff=5
@@ -214,7 +215,7 @@ let maplocalleader=","
 " Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
 nnoremap ; :
 
-" jump to tag definition (for example a function) when press F2
+" jump to tag definition (for example a function) when press F7
 " you need ctags to make this works through a whole project
 noremap <F7> <C-w>]
 inoremap <F7> <Esc><C-w>]
@@ -238,9 +239,6 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
 
-" open navigation tree at the emplacement of current buffer
-nmap <silent>;n :NERDTreeFind<CR>
-
 nnoremap <F10> :GundoToggle<CR>
 
 " Window movement
@@ -248,12 +246,23 @@ map <A-h> <C-w>h<C-W>_
 map <A-j> <C-w>j<C-W>_
 map <A-k> <C-w>k<C-W>_
 map <A-l> <C-w>l<C-W>_
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 
 " Toggle spell checking on and off with `;s`
 nmap <silent> <leader>s :set spell!<CR>
 " Set region to American English
 set spelllang=en_us
+
+set pastetoggle=<F2>
+
+nnoremap j gj
+nnoremap k gk
+
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 "================================
 " CUSTOM FUNCTIONS 
