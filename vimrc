@@ -51,7 +51,8 @@ set t_Co=256
 "Default colors
 "colorscheme xoria256
 "colorscheme molokai
-colorscheme mustang 
+"colorscheme mustang 
+colorscheme wombat 
 
 "display the current mode
 set showmode
