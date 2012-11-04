@@ -31,11 +31,15 @@ set encoding=utf-8
 
 set backup 
 set noswapfile
-set undofile " so is persistent undo ...
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 set title
-
+set history=300
+" Persistent Undo (vim 7.3 and later)
+if exists('&undofile') && !&undofile
+  set undodir=~/.vim_runtime/undodir
+  set undofile
+endif
 "make vim save view (state) (folds, cursor, etc)
 au BufWinLeave * silent! mkview "make vim save view (state) (folds, cursor, etc)
 "make vim load view (state) (folds, cursor, etc)
@@ -173,7 +177,6 @@ set syntax=php.doxygen
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
-
 "================================
 " CONFIG PLUGIN TAGLIST SETTINGS
 "================================
@@ -193,6 +196,10 @@ let Tlist_WinWidth=50
 " only print constants, class and functions in our taglist
 let tlist_php_settings = 'php;d:Constantes;c:Classes;f:Functions'
 
+"================================
+" CONFIG PLUGIN TAGBAR  SETTINGS
+"================================
+let g:tagbar_autofocus = 1
 "================================
 " CONFIGURE NEOCOMPLCACHE
 "================================
@@ -227,8 +234,10 @@ noremap <F7> <C-w>]
 inoremap <F7> <Esc><C-w>]
 
 "F12 toogle taglist buffer
-nnoremap <silent> <F9> :TlistToggle<CR>
+" nnoremap <silent> <F9> :TlistToggle<CR>
 
+"F3 toogle tagbar buffer
+nnoremap <silent> <F9> :TagbarToggle<CR>
 " open Navigation window with native nerdtree
 "nmap <silent><F9> :NERDTreeToggle<CR>
 "imap <silent><F9> :NERDTreeToggle<CR>
@@ -270,9 +279,19 @@ nnoremap k gk
 
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+map <C-F5> <Esc>:EnableFastPHPFolds<Cr> 
+map <C-F6> <Esc>:EnablePHPFolds<Cr> 
+map <C-F7> <Esc>:DisablePHPFolds<Cr>
+
+map <C-f><C-f> <Esc>zfa}><Cr> 
+
+nnoremap <Esc>P P'[v']=
+nnoremap <Esc>p p'[v']=
+
 "================================
 " CUSTOM FUNCTIONS 
 "================================
+
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
   let _s=@/
