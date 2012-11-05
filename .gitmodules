@@ -40,3 +40,9 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle/phpcomplete"]
+	path = bundle/phpcomplete
+	url = https://github.com/shawncplus/phpcomplete.vim
+[submodule "bundle/ragtag"]
+	path = bundle/ragtag
+	url = https://github.com/tpope/vim-ragtag
