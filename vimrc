@@ -30,6 +30,8 @@ scriptencoding utf-8
 set encoding=utf-8
 
 set backup 
+set backupdir=~/.vimbackup/
+set directory=~/.vimbackup/
 set noswapfile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
@@ -236,7 +238,7 @@ inoremap <F7> <Esc><C-w>]
 "F12 toogle taglist buffer
 " nnoremap <silent> <F9> :TlistToggle<CR>
 
-"F3 toogle tagbar buffer
+"F9 toogle tagbar buffer
 nnoremap <silent> <F9> :TagbarToggle<CR>
 " open Navigation window with native nerdtree
 "nmap <silent><F9> :NERDTreeToggle<CR>
@@ -291,18 +293,14 @@ nnoremap <Esc>p p'[v']=
 "================================
 " CUSTOM FUNCTIONS 
 "================================
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
 
-function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 
 function! NERDTreeInitAsNeeded()
