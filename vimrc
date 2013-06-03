@@ -290,6 +290,29 @@ map <C-f><C-f> <Esc>zfa}><Cr>
 nnoremap <Esc>P P'[v']=
 nnoremap <Esc>p p'[v']=
 
+" in case your cscope execute is not in system path.
+" let g:cscope_cmd = 'D:/tools/vim/cscope.exe'
+" s: Find this C symbol
+map <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+" g: Find this definition
+map <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+map <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+map <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+" t: Find this text string
+map <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+map <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+" f: Find this file
+map <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+map <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+map <leader>l :call ToggleLocationList()<CR>
+
+
+map <leader>ms :mksession! ~/vim_session <cr> " Quick write session with F2
+map <leader>ss :source ~/vim_session <cr>     " And load session with F3
 "================================
 " CUSTOM FUNCTIONS 
 "================================
@@ -314,6 +337,23 @@ function! NERDTreeInitAsNeeded()
     wincmd l
   endif
 endfunction
+
+if has("cscope")
+
+  function! CScope_Refresh()
+    cs kill 0
+    !find $PWD -type f | egrep "\.(php|js|module|info|install|inc)$" > files && cscope -b -i files
+"    !find $PWD -name \*.php > files && cscope -b -i files
+"    !find $PWD -name \*.js >> files && cscope -b -i files
+"    !find $PWD -name \*.module >> files && cscope -b -i files
+"    !find $PWD -name \*.info >> files && cscope -b -i files
+"    !find $PWD -name \*.install >> files && cscope -b -i files
+"     !find $PWD -name \*.inc >> files && cscope -b -i files
+     cs add .
+     !rm -f files
+    endfunction
+  comm! -nargs=0 R call CScope_Refresh()
+endif
 
 " Source the vimrc file after saving it
 if has("autocmd")

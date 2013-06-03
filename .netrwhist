@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/etc/php5/apache2'
-let g:netrw_dirhist_2='/home/ybo/dev/insead/svn/branches/dev/knwoledge'
-let g:netrw_dirhist_3='/home/ybo/dev/insead/svn/branches/dev/sites/all/modules/custom/palpix_toolbox'
-let g:netrw_dirhist_4='/mnt/ubuntu/var/www/dev/tmg/sites/all/themes/tmg'
-let g:netrw_dirhist_5='/mnt/ubuntu/var/www/dev/tmg/sites/all/themes/tmg/preprocess'
-let g:netrw_dirhist_6='/etc/rc.d'
-let g:netrw_dirhist_7='/etc/httpd/conf/vhosts'
-let g:netrw_dirhist_8='/home/peter/vim-config'
-let g:netrw_dirhist_9='/home/peter/www/dev/tmg/sites/all/modules/contrib/roleassign'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/peter/www/dev/hunatv/build'
