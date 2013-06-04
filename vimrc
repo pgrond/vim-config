@@ -47,6 +47,8 @@ au BufWinLeave * silent! mkview "make vim save view (state) (folds, cursor, etc)
 "make vim load view (state) (folds, cursor, etc)
 au BufWinEnter * silent! loadview
 
+"Add ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 "==============================
 "Vim UI
 "==============================
@@ -313,6 +315,8 @@ map <leader>l :call ToggleLocationList()<CR>
 
 map <leader>ms :mksession! ~/vim_session <cr> " Quick write session with F2
 map <leader>ss :source ~/vim_session <cr>     " And load session with F3
+
+map <leader>p :CtrlP<CR>
 "================================
 " CUSTOM FUNCTIONS 
 "================================
