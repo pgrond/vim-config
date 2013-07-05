@@ -52,3 +52,9 @@
 [submodule "bundle/vim-markdown-preview"]
 	path = bundle/vim-markdown-preview
 	url = https://github.com/nelstrom/vim-markdown-preview
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "bundle/unite"]
+	path = bundle/unite
+	url = https://github.com/Shougo/unite.vim
