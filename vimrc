@@ -116,7 +116,7 @@ set wildmenu " show list instead of just completing
 set wildmode=list:longest,full " command <Tab> completion, list matches, then longest common part, then all.
 set whichwrap=b,s,h,l,<,>,[,] " backspace and cursor keys wrap to
 set scrolljump=5 " lines to scroll when cursor leaves screen
-set foldenable " auto fold code
+" set foldenable " auto fold code
 set gdefault " the /g flag on :s substitutions by default
 " set list
 " set listchars=tab:>.,trail:.,extends:#,nbsp:. 
@@ -194,6 +194,8 @@ set syntax=php.doxygen
 " go to line with syntax error, press enter to go to next error
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
+
+let php_folding=0
 
 "================================
 " CONFIG PLUGIN TAGLIST SETTINGS
@@ -330,7 +332,7 @@ map <leader>l :call ToggleLocationList()<CR>
 map <leader>ms :mksession! ~/vim_session <cr> " Quick write session with F2
 map <leader>ss :source ~/vim_session <cr>     " And load session with F3
 
-map <leader>p :CtrlP<CR>
+map <leader>t :CtrlP<CR>
 "================================
 " CUSTOM FUNCTIONS 
 "================================
