@@ -91,6 +91,10 @@ if has('statusline')
   set statusline+=%{fugitive#statusline()} " Git Hotness
   set statusline+=\ [%{&ff}/%Y] " filetype
   set statusline+=\ [%{getcwd()}] " current dir
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_enable_signs=1
   "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
   set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 endif
@@ -166,6 +170,11 @@ augroup drupal
   autocmd BufRead,BufNewFile *.profile set filetype=php
   autocmd BufRead,BufNewFile *.test set filetype=php
 augroup END
+
+"================================
+" CONFIG DRUPAL CODING STANDARDS
+"================================
+let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
 
 "===============================
 " PHP SETTINGS
