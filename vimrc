@@ -174,7 +174,7 @@ augroup END
 "================================
 " CONFIG DRUPAL CODING STANDARDS
 "================================
-let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
+" let g:syntastic_phpcs_conf=' --standard=Drupal  --extensions=php,module,inc,install,test,profile,theme'
 
 "===============================
 " PHP SETTINGS
