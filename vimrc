@@ -65,7 +65,8 @@ set t_Co=256
 "colorscheme xoria256
 "colorscheme molokai
 "colorscheme mustang 
-colorscheme wombat 
+"colorscheme wombat 
+colorscheme solarized
 
 "display the current mode
 set showmode
