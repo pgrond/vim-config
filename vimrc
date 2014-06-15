@@ -1,8 +1,45 @@
-" Following lines added by drush vimrc-install on Fri, 05 Jul 2013 21:04:21 +0000.
+"Use Vim settings, rather then Vi settings (much better!).
+"This must be first, because it changes other options as a side effect.
 set nocompatible
-call pathogen#infect('/home/peter/.drush/vimrc/bundle')
-call pathogen#infect('/home/peter/.vim/bundle')
+" We are using Vunlde now 
+"call pathogen#infect('/home/peter/.drush/vimrc/bundle')
+"call pathogen#infect('/home/peter/.vim/bundle')
 " End of vimrc-install additions.
+
+" Required Vundle setup
+filetype off
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-abolish'
+Bundle 'kien/ctrlp.vim'
+Bundle 'xolox/vim-easytags' 
+Bundle 'tpope/vim-five' 
+Bundle 'sjl/gundo.vim' 
+Bundle 'tpope/vim-haml' 
+Bundle 'Shougo/neocomplcachei'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'tpope/vim-ragtag' 
+Bundle 'ghewgill/vim-scmdiff' 
+Bundle 'vim-scripts/searchfold.vim'
+Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar' 
+Bundle 'tomtom/tlib_vim' 
+Bundle 'Shougo/unite.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'bling/vim-airline'
+Bundle 'Townk/vim-autoclose' 
+Bundle 'airblade/vimgutter' 
+Bundle 'groenewege/vim-less' 
+Bundle 'nelstrom/vim-markdown-preview' 
+Bundle 'garbas/vim-snipmate' 
+Bundle 'mhinz/vim-startify' 
+Bundle 'tpope/vim-surround' 
+Bundle 'beyondwords/vim-twig' 
+
 "===============================
 " GENERAL SETTINGS
 "===============================
@@ -10,13 +47,10 @@ call pathogen#infect('/home/peter/.vim/bundle')
 "Use of pathogen plugin to keep each plugin in its own folder.
 "inside a 'bundle' directory. It's the only way suppress / add
 "plugin in a clean way.
-call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
 
-"Use Vim settings, rather then Vi settings (much better!).
-"This must be first, because it changes other options as a side effect.
-set nocompatible
 
 "Assume dark background
 set background=dark
