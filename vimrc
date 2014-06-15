@@ -40,6 +40,9 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'mhinz/vim-startify' 
 Bundle 'tpope/vim-surround' 
 Bundle 'beyondwords/vim-twig' 
+Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'phpfolding.vim'
 
 "===============================
 " GENERAL SETTINGS
@@ -300,8 +303,8 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " open navigation with nerdree-tabs, which make
 " NerdTree behave more like in a classic IDE
-nmap <silent><F8> :NERDTreeTabsToggle<CR>
-imap <silent><F8> :NERDTreeTabsToggle<CR>
+nmap <silent><F8> :NERDTreeToggle<CR>
+imap <silent><F8> :NERDTreeToggle<CR>
 map <leader>e :NERDTreeFind<CR>
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
