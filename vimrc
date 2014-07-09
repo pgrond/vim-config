@@ -11,38 +11,37 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-
-Bundle 'tpope/vim-abolish'
-Bundle 'kien/ctrlp.vim'
-Bundle 'xolox/vim-misc' 
-Bundle 'xolox/vim-easytags' 
-Bundle 'tpope/vim-fugitive' 
-Bundle 'sjl/gundo.vim' 
-Bundle 'tpope/vim-haml' 
-Bundle 'Shougo/neocomplcache'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'tpope/vim-ragtag' 
-Bundle 'ghewgill/vim-scmdiff' 
-Bundle 'vim-scripts/searchfold.vim'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar' 
-Bundle 'tomtom/tlib_vim' 
-Bundle 'Shougo/unite.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'bling/vim-airline'
-Bundle 'Townk/vim-autoclose' 
-Bundle 'airblade/vim-gitgutter' 
-Bundle 'groenewege/vim-less' 
-Bundle 'nelstrom/vim-markdown-preview' 
-Bundle 'garbas/vim-snipmate' 
-Bundle 'mhinz/vim-startify' 
-Bundle 'tpope/vim-surround' 
-Bundle 'beyondwords/vim-twig' 
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'phpfolding.vim'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-abolish'
+Plugin 'kien/ctrlp.vim'
+Plugin 'xolox/vim-misc' 
+Plugin 'xolox/vim-easytags' 
+Plugin 'tpope/vim-fugitive' 
+Plugin 'sjl/gundo.vim' 
+Plugin 'tpope/vim-haml' 
+Plugin 'Shougo/neocomplcache'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'tpope/vim-ragtag' 
+Plugin 'ghewgill/vim-scmdiff' 
+Plugin 'vim-scripts/searchfold.vim'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar' 
+Plugin 'tomtom/tlib_vim' 
+Plugin 'Shougo/unite.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'bling/vim-airline'
+Plugin 'Townk/vim-autoclose' 
+Plugin 'airblade/vim-gitgutter' 
+Plugin 'groenewege/vim-less' 
+Plugin 'nelstrom/vim-markdown-preview' 
+Plugin 'garbas/vim-snipmate' 
+Plugin 'mhinz/vim-startify' 
+Plugin 'tpope/vim-surround' 
+Plugin 'beyondwords/vim-twig' 
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'phpfolding.vim'
 
 "===============================
 " GENERAL SETTINGS
@@ -156,6 +155,8 @@ set wildmode=list:longest,full " command <Tab> completion, list matches, then lo
 set whichwrap=b,s,h,l,<,>,[,] " backspace and cursor keys wrap to
 set scrolljump=5 " lines to scroll when cursor leaves screen
 " set foldenable " auto fold code
+set foldmethod=syntax
+set foldlevelstart=20
 set gdefault " the /g flag on :s substitutions by default
 " set list
 " set listchars=tab:>.,trail:.,extends:#,nbsp:. 
@@ -234,7 +235,6 @@ set syntax=php.doxygen
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
-let php_folding=0
 
 "================================
 " CONFIG PLUGIN TAGLIST SETTINGS

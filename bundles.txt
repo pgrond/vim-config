@@ -1,0 +1,78 @@
+Entering 'bundle/abolish'
+origin	https://github.com/tpope/vim-abolish.git (fetch)
+origin	https://github.com/tpope/vim-abolish.git (push)
+Entering 'bundle/ctrlp.vim'
+origin	https://github.com/kien/ctrlp.vim.git (fetch)
+origin	https://github.com/kien/ctrlp.vim.git (push)
+Entering 'bundle/easytags'
+origin	https://github.com/xolox/vim-easytags.git (fetch)
+origin	https://github.com/xolox/vim-easytags.git (push)
+Entering 'bundle/fugitive'
+origin	git://github.com/tpope/vim-fugitive.git (fetch)
+origin	git@github.com:tpope/vim-fugitive.git (push)
+Entering 'bundle/gundo'
+origin	https://github.com/sjl/gundo.vim.git (fetch)
+origin	https://github.com/sjl/gundo.vim.git (push)
+Entering 'bundle/haml'
+origin	https://github.com/tpope/vim-haml (fetch)
+origin	https://github.com/tpope/vim-haml (push)
+Entering 'bundle/neocomplcache'
+origin	https://github.com/Shougo/neocomplcache (fetch)
+origin	https://github.com/Shougo/neocomplcache (push)
+Entering 'bundle/phpcomplete'
+origin	https://github.com/shawncplus/phpcomplete.vim (fetch)
+origin	https://github.com/shawncplus/phpcomplete.vim (push)
+Entering 'bundle/ragtag'
+origin	https://github.com/tpope/vim-ragtag (fetch)
+origin	https://github.com/tpope/vim-ragtag (push)
+Entering 'bundle/scmdiff'
+origin	https://github.com/ghewgill/vim-scmdiff (fetch)
+origin	https://github.com/ghewgill/vim-scmdiff (push)
+Entering 'bundle/searchfold'
+origin	https://github.com/vim-scripts/searchfold.vim (fetch)
+origin	https://github.com/vim-scripts/searchfold.vim (push)
+Entering 'bundle/supertab'
+origin	https://github.com/ervandew/supertab (fetch)
+origin	https://github.com/ervandew/supertab (push)
+Entering 'bundle/syntastic'
+origin	https://github.com/scrooloose/syntastic.git (fetch)
+origin	https://github.com/scrooloose/syntastic.git (push)
+Entering 'bundle/tagbar'
+origin	https://github.com/majutsushi/tagbar.git (fetch)
+origin	https://github.com/majutsushi/tagbar.git (push)
+Entering 'bundle/tlib'
+origin	https://github.com/tomtom/tlib_vim.git (fetch)
+origin	https://github.com/tomtom/tlib_vim.git (push)
+Entering 'bundle/unite'
+origin	https://github.com/Shougo/unite.vim (fetch)
+origin	https://github.com/Shougo/unite.vim (push)
+Entering 'bundle/vim-addon-mw-utils'
+origin	https://github.com/MarcWeber/vim-addon-mw-utils.git (fetch)
+origin	https://github.com/MarcWeber/vim-addon-mw-utils.git (push)
+Entering 'bundle/vim-airline'
+origin	https://github.com/bling/vim-airline (fetch)
+origin	https://github.com/bling/vim-airline (push)
+Entering 'bundle/vim-autoclose'
+origin	https://github.com/Townk/vim-autoclose (fetch)
+origin	https://github.com/Townk/vim-autoclose (push)
+Entering 'bundle/vim-gitgutter'
+origin	git://github.com/airblade/vim-gitgutter.git (fetch)
+origin	git@github.com:airblade/vim-gitgutter.git (push)
+Entering 'bundle/vim-less'
+origin	https://github.com/groenewege/vim-less.git (fetch)
+origin	https://github.com/groenewege/vim-less.git (push)
+Entering 'bundle/vim-markdown-preview'
+origin	https://github.com/nelstrom/vim-markdown-preview (fetch)
+origin	https://github.com/nelstrom/vim-markdown-preview (push)
+Entering 'bundle/vim-snipmate'
+origin	https://github.com/garbas/vim-snipmate (fetch)
+origin	https://github.com/garbas/vim-snipmate (push)
+Entering 'bundle/vim-startify'
+origin	https://github.com/mhinz/vim-startify (fetch)
+origin	https://github.com/mhinz/vim-startify (push)
+Entering 'bundle/vim-surround'
+origin	http://github.com/tpope/vim-surround (fetch)
+origin	http://github.com/tpope/vim-surround (push)
+Entering 'bundle/vim-twig'
+origin	https://github.com/beyondwords/vim-twig.git (fetch)
+origin	https://github.com/beyondwords/vim-twig.git (push)
